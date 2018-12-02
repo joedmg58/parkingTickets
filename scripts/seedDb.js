@@ -154,7 +154,7 @@ function populateUser() {
 
 function populateLocation() {
     console.log('Inserting locations...');
-    db.Contractor
+    db.Location
         .deleteMany({})
         .then( () => db.Location.collection.insertMany(locationSeed) )
         .then( data => {

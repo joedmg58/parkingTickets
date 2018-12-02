@@ -6,6 +6,6 @@ var locationSchema = new Schema({
   coordinates: { lat: Number, lon: Number }
 });
 
-var User = mongoose.model("Location", locationSchema);
+var Location = mongoose.model("Location", locationSchema);
 
 module.exports = Location;
