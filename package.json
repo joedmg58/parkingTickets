@@ -1,0 +1,36 @@
+{
+  "name": "parkingtickets",
+  "version": "1.0.0",
+  "description": "Log book for keep traking of parking tickets to ask for reimbursement",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joedmg58/parkingTickets.git"
+  },
+  "keywords": [
+    "Express",
+    "MongoDB",
+    "JS",
+    "RESTful",
+    "API"
+  ],
+  "author": "Joed Machado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joedmg58/parkingTickets/issues"
+  },
+  "homepage": "https://github.com/joedmg58/parkingTickets#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.4",
+    "http-errors": "^1.7.1",
+    "mongoose": "^5.3.14",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7"
+  }
+}
