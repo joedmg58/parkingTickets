@@ -5,7 +5,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan"); //logger
 var mongoose = require("mongoose"); //MongoDB ORM
 
-//const routes = require("./routes");
+const routes = require("./routes");
 
 const PORT = process.env.PORT || 3000;
 
@@ -19,14 +19,16 @@ var server = app.listen(PORT, function() {
 });
 
 
+// Add routes
+app.use(routes);
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-// Add routes
-//app.use(routes);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -35,7 +37,7 @@ app.use(function(req, res, next) {
 
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/roboSurvey",
+  process.env.MONGODB_URI || "mongodb://localhost/parkingTickets",
   { useNewUrlParser: true }
 );
 

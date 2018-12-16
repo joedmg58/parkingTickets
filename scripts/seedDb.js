@@ -36,7 +36,7 @@ const userSeed = [
         email: "joedmg58@gmail.com",
         password: codedPassword,
         role: "user",
-        date: isoDate,
+        since: isoDate,
         tickets:[
             {
                 date: isoDate1,
@@ -64,7 +64,7 @@ const userSeed = [
         email: "ed1970@mail.com",
         password: codedPassword,
         role: "user",
-        date: isoDate,
+        since: isoDate,
         tickets:[
             {
                 date: isoDate1,
@@ -92,7 +92,7 @@ const userSeed = [
         email: "admin@mail.com",
         password: codedPassword,
         role: "manager",
-        date: isoDate,
+        since: isoDate,
         tickets:[
             {
                 date: isoDate1,
