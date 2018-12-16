@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const userSchema = mongoose.Schema({
+const ticketSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     email: {
         type: String, 
@@ -16,4 +16,4 @@ const userSchema = mongoose.Schema({
     userImage: {type: String, required: false}
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Ticket', ticketSchema);
