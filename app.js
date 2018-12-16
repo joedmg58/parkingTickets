@@ -41,8 +41,6 @@ app.use((req, res, next) => {
 });
 
 //Routes to handle request
-app.use('/products', productRoutes);
-app.use('/orders', orderRoutes);
 app.use('/user', userRoutes);
 
 //Handling any error route (should be in this order, after routes, after logger)
@@ -63,20 +61,12 @@ app.use((error, req, res, next) =>{
 });
 
 
-/*
-app.use((req, res, next) => {   //use invoke all middleware, al request pass through the stacks of functions defined in use
-    res.status(200).json({
-        message: 'It works!'
-    });
-});
-*/
-
 //Connect to MongoDB
 mongoose.connect(
     'mongodb://' + 
     process.env.MONGO_DB_USR + 
     ':' + process.env.MONGO_DB_PWD  + 
-    '@ds241658.mlab.com:41658/node-rest-shop', {useNewUrlParser: true}
+    '@ds135704.mlab.com:35704/ptrdb', {useNewUrlParser: true}
     );
 
 module.exports = app;
