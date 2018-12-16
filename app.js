@@ -11,7 +11,7 @@ const logger        = require('morgan');
 const bodyParser    = require('body-parser');
 const mongoose      = require('mongoose'); //mongodb://<dbuser>:<dbpassword>@ds135704.mlab.com:35704/ptrdb
 
-const userRoutes    = require('./api/routes/users')
+const userRoutes    = require('./api/routes/usersRoute')
 
 //Adding logger middleware
 app.use(logger('dev'));
