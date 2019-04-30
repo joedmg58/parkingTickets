@@ -68,6 +68,8 @@ module.exports = {
 
     login: (req, res, next) => {
 
+        console.log(req.body.email, req.body.password);
+        
         User.findOne({email: req.body.email})   //findOne return no object if no existing user, find return an empty array
             .exec()
             .then(user => {

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Page Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/lib/onsenui/css/onsenui.css">
+        <link rel="stylesheet" href="assets/lib/onsenui/css/old-onsen-css-components.min.css"> <!--https://unpkg.com/onsenui/css/onsen-css-components.min.css">-->
+        <link rel="stylesheet" href="assets/css/style.css">        
+    </head>
+
+    <body>
+        
+        <ons-splitter>
+            <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+                <ons-page>
+                    <ons-list>
+                        <ons-list-item onclick="fn.load('tickets-tab.html')" tappable>
+                            Tickets
+                        </ons-list-item>
+                        <ons-list-item onclick="fn.load('profile.html')" tappable>
+                            Profile
+                        </ons-list-item>
+                        <ons-list-item onclick="fn.load('about.html')" tappable>
+                            About
+                        </ons-list-item>
+                        <ons-list-item onclick="fn.load('login.html')" tappable>
+                            Logout
+                        </ons-list-item>
+                    </ons-list>
+                </ons-page>
+            </ons-splitter-side>
+            <ons-splitter-content id="content" page="login.html"></ons-splitter-content>
+        </ons-splitter>
+
+        <template id="login.html">
+            <ons-page>
+                <ons-row>
+                    <ons-col vertical-align="true">
+                        <ons-card>
+                                <img src="assets/img/parkingLogo.png" alt="parking logo" style="width: 50%; margin: auto;">
+                                <div class="title">
+                                    <p>Welcome to: </p>
+                                    <p>Parking Ticket Reimbursement</p>
+                                </div>
+            
+                                <div style="text-align: center; margin-top: 30px;">
+                                    <p>
+                                        <ons-icon icon="fa-at"></ons-icon>
+                                        <ons-input id="email" modifier="underbar" placeholder="e-mail" float></ons-input>
+                                    </p>
+                                    <p>
+                                        <ons-icon icon="md-key"></ons-icon>   
+                                        <ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>
+                                    </p>
+                                    <p style="margin-top: 30px;">
+                                        <ons-button onclick="login()">Sign in</ons-button>
+                                    </p>
+                                </div>
+                            </ons-card>
+                    </ons-col>
+                </ons-row>
+                
+            </ons-page>
+        </template>
+
+        <template id="tickets-tab.html">
+            <ons-page>
+
+                <ons-toolbar>
+                    <div class="left">
+                        <ons-toolbar-button onclick="fn.open()">
+                        <ons-icon icon="md-menu"></ons-icon>
+                        </ons-toolbar-button>
+                    </div>
+                    <div class="center">
+                        Parking Tickets
+                    </div>
+                </ons-toolbar>
+
+                <ons-tabbar swipeable position="auto">
+                    <ons-tab
+                        icon="md-crop-portrait"
+                        label="New"
+                        page="tickets.html"
+                        badge="7"
+                        active>
+                    </ons-tab>
+
+                    <ons-tab
+                        icon="md-thumb-up"
+                        label="Aproved"
+                        page="aprovedtickets.html">
+                    </ons-tab>
+                </ons-tabbar>
+
+            </ons-page>
+        </template>
+                  
+        <template id="tickets.html">
+            <ons-page id="tickets">
+
+                <ons-list id="ticketslist">
+
+                    <!-- <ons-list-header class="center olh">November</ons-list-header>
+                    <ons-list-item expandable modifier="longdivider">
+                        Surf Club 803
+                        <div class="expandable-content">11/20/2018 - $ 7.51</div>
+                    </ons-list-item>
+                    <ons-list-item expandable modifier="longdivider">
+                        St. Regis 2500
+                        <div class="expandable-content">11/20/2018 - $ 7.51</div>
+                    </ons-list-item>
+                    <ons-list-header class="center olh">December</ons-list-header>
+                    <ons-list-item expandable modifier="longdivider">
+                        La Petite Muse H.
+                        <div class="expandable-content">12/23/2018 - $ 7.51</div>
+                    </ons-list-item>
+                    <ons-list-item expandable modifier="longdivider">
+                        Surf Club 803
+                        <div class="expandable-content">12/23/2018 - $ 9.51</div>
+                    </ons-list-item>
+                    <ons-list-item expandable modifier="longdivider">
+                        St. Regis 2500
+                        <div class="expandable-content">12/23/2018 - $ 12.43</div>
+                    </ons-list-item>
+                     -->
+
+                </ons-list>
+                <ons-fab position="bottom right" onclick="fn.load('add.html')">
+                    <ons-icon icon="md-plus"></ons-icon>
+                </ons-fab>
+            </ons-page>
+        </template>
+
+        <template id="aprovedtickets.html">
+            <ons-page>
+                <ons-list id="aprovedlist"></ons-list>
+            </ons-page>
+        </template>
+
+        <template id="add.html">
+            <ons-page>
+
+                <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button onclick="fn.load('tickets-tab.html')">
+                    <!-- <ons-icon icon="fa-arrow-left"></ons-icon> -->
+                    <ons-icon icon="md-arrow-back"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">
+                    Add Ticket
+                </div>
+                </ons-toolbar>
+                
+                <div class="center" style="text-align: center; margin-top: 30px;">
+                    <p>
+                        <ons-input id="jobsite" modifier="underbar" type="text" placeholder="Job Site" float></ons-input>
+                    </p>
+                    <p>
+                        <ons-input id="date" modifier="underbar" type="date" float></ons-input>
+                    </p>
+                    <p>
+                        <ons-input id="amount" modifier="underbar" type="number" placeholder="Amount" float></ons-input>
+                    </p>
+                    <p style="margin-top: 30px;">
+                        <ons-button onclick="addTicket()">Add Ticket</ons-button>
+                    </p>
+                </div>
+
+            </ons-page>
+        </template>
+                  
+                  <template id="profile.html">
+                    <ons-page>
+                      <ons-toolbar>
+                        <div class="left">
+                          <ons-toolbar-button onclick="fn.open()">
+                            <ons-icon icon="md-menu"></ons-icon>
+                          </ons-toolbar-button>
+                        </div>
+                        <div class="center">
+                          Profile
+                        </div>
+                      </ons-toolbar>
+                    </ons-page>
+                  </template>
+                  
+                  <template id="about.html">
+                    <ons-page>
+                      <ons-toolbar>
+                        <div class="left">
+                          <ons-toolbar-button onclick="fn.open()">
+                            <ons-icon icon="md-menu"></ons-icon>
+                          </ons-toolbar-button>
+                        </div>
+                        <div class="center">
+                          About
+                        </div>
+                      </ons-toolbar>
+                    </ons-page>
+                  </template>
+
+        <script src="assets/lib/onsenui/js/onsenui.min.js"></script>
+        <script src="assets/js/app.js"></script>
+    </body>
+
+</html>

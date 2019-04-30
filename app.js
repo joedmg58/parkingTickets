@@ -11,7 +11,8 @@ const logger        = require('morgan');
 const bodyParser    = require('body-parser');
 const mongoose      = require('mongoose'); //mongodb://<dbuser>:<dbpassword>@ds135704.mlab.com:35704/ptrdb
 
-const userRoutes    = require('./api/routes/usersRoute')
+const userRoutes    = require('./api/routes/usersRoute');
+const ticketsRoute  = require('./api/routes/ticketsRoute');
 
 //Adding logger middleware
 app.use(logger('dev'));
@@ -42,6 +43,7 @@ app.use((req, res, next) => {
 
 //Routes to handle request
 app.use('/user', userRoutes);
+app.use('/tickets', ticketsRoute);
 
 //Handling any error route (should be in this order, after routes, after logger)
 app.use((req, res, next) =>{
